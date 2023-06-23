@@ -43,8 +43,8 @@ from joblib import dump, load
 
 
 # Import paths
-path_train = "datasets/LISS_example_input_data.csv"
-path_outcome = "datasets/LISS_example_groundtruth_data.csv"
+path_train = "data/test_data_liss_2_subjects.csv"
+path_outcome = "data/test_data_liss_2_subjects_ground_truth.csv"
 
 
 ### In[5]:
