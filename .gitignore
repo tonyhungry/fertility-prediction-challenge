@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Rproj.user
+.Rhistory
+.Rproj
