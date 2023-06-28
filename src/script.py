@@ -46,6 +46,31 @@ def predict_outcomes(df):
     """Process the input data and write the predictions."""
     # Keep 
     results = df[["nomem_encr"]]
+        
+    # Select predictors: education, year of birth, gender, number of children in the household 
+    # You can do this automatically (not necessarily better): https://scikit-learn.org/stable/modules/feature_selection.html
+    keepcols = ['leeftijd2019','aantalki2019','partner2019','burgstat2019',
+            'woonvorm2019','woning2019','belbezig2019',
+            'oplmet2019','sted2019','brutohh_f2019','geslacht',
+            'ch19l004','ch19l018', 'ch19l021', 'ch19l022', 'ch19l126','ch19l133',
+            'ch19l159','ch19l160', 'ch19l161','ch19l162',
+            'ch19l163', 'ch19l229','cp19k010','cp19k026','cv19k012','cv19k053',
+            'cv19k101','cv19k125','cv19k126','cv19k130',
+            'cv19k140','cr19l089','cr19l134','cs19l079','cs19l105','cs19l436',
+            'cs19l435',
+            'cf19l014','cf19l025','cf14g034','cf19l136','cf19l131','cf19l129',
+            'cf19l130','cf19l133','cf19l134', 'cf19l128','cf14g035','cf19l013',
+            'cf19l024','cf19l026','cf19l027','cf19l030','cf19l032','cf19l033',
+            'cf19l034','cf19l068','cf19l212','cf19l252','cf19l453','cf19l504',
+            'cf19l505','cf19l506','cf19l508','cv19k111','cf19l011',
+            'cf19l183','cf19l198']
+    
+    
+    df = df.loc[:, keepcols]
+
+    # Dictionary used
+    dict_kids = {'None': 0, 'One child': 1, 'Two children': 2, 'Three children': 3, 'Four children': 4, 'Five children': 5, 'Six children': 6}
+    df["aantalki2019"] = df["aantalki2019"].map(dict_kids)
                             
     # Load your trained model from the models directory
     model_path = os.path.join(os.path.dirname(__file__), "..", "models", "model.joblib")
