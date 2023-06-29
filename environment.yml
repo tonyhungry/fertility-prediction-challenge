@@ -6,4 +6,4 @@ dependencies:
   - scikit-learn>=1.2
   - joblib>=1.1
   - matplotlib>=3.7
-  - xgboost>=1.7.6
+  - xgboost>=1.7
