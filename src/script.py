@@ -12,7 +12,7 @@ should be 0 (no child) or 1 (having a child).
 
 The script can be run from the command line using the following command:
 
-python script.py input_path 
+python script.py input_path .
 
 An example for the provided test is:
 
